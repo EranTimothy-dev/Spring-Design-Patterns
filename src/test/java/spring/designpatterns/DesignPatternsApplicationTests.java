@@ -18,6 +18,7 @@ import spring.designpatterns.decorator.example2.Text;
 import spring.designpatterns.prototype.example1.NotPrototype;
 import spring.designpatterns.prototype.example1.Prototype;
 import spring.designpatterns.prototype.example2.Soldier;
+import spring.designpatterns.repository.PresidentRepository;
 import spring.designpatterns.singleton.SingletonA;
 import spring.designpatterns.singleton.SingletonB;
 
@@ -116,6 +117,14 @@ class DesignPatternsApplicationTests {
         System.out.println("Plain Text: " + plainText.render());
         System.out.println("Bold Text: " + boldText.render());
         System.out.println("Bold Italic Text: " + italicBoldText.render());
+    }
+
+    @Autowired
+    PresidentRepository presidentRepository;
+
+    @Test
+    public void testRepository(){
+        System.out.println(this.presidentRepository.findById(1L));
     }
 
 
