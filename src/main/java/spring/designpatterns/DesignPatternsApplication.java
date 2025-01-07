@@ -2,13 +2,12 @@ package spring.designpatterns;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class DesignPatternsApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(DesignPatternsApplication.class, args);
-    }
     // this app covers various design patterns in java applications.
     // the main types of patterns are
     //  creational patterns: focus on object creation
@@ -24,4 +23,13 @@ public class DesignPatternsApplication {
         Template Pattern
         MVC Pattern
      */
+    public static void main(String[] args) {
+        SpringApplication.run(DesignPatternsApplication.class, args);
+    }
+
+    @Bean
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
+    }
+
 }
